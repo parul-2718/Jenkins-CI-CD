@@ -15,11 +15,11 @@ pipeline {
          }
 
      }
-     post {
-                 always {
-                     jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
-                 }
-            } 
+     // post {
+     //             always {
+     //                 jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
+     //             }
+     //        } 
   
    	}
 
