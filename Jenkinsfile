@@ -7,6 +7,11 @@ pipeline {
              steps {
                  echo 'Building...'
              }
+       post {
+                 always {
+                     jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
+                 }
+            } 
      }
          stage("Deploy application") { 
          steps { 
@@ -14,11 +19,7 @@ pipeline {
          }
 
      }
-     post {
-                 always {
-                     jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
-                 }
-            } 
+     
   
    	}
 
