@@ -17,7 +17,7 @@ pipeline {
      }
      post {
                  always {
-                     jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net', branch: 'MTKDEMO-75-Develop'
+                     jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
                  }
             } 
   
