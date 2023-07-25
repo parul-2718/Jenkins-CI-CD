@@ -3,23 +3,23 @@ pipeline {
    agent any
 
    stages {
-     // stage('Test') { 
-     //    steps { 
-     //       sh 'echo "testing application..."'
-     //    }
-     //  }
-
+     stage('Build') {
+             steps {
+                 echo 'Building...'
+             }
+       post {
+                 always {
+                     jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
+                 }
+            } 
+     }
          stage("Deploy application") { 
          steps { 
-           sh 'echo "deploying application..."'
+            echo "deploying application..."
          }
 
      }
-     // post {
-     //             always {
-     //                 jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
-     //             }
-     //        } 
+     
   
    	}
 
