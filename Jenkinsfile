@@ -14,7 +14,7 @@ pipeline {
          }
          stage('Deploy - Staging') {
              when {
-                 branch 'MTKDEMO-475-Develop'
+                 branch 'MTKDEMO-75-Develop'
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
