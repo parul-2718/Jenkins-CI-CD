@@ -14,27 +14,27 @@ pipeline {
          }
          stage('Deploy - Staging') {
              when {
-                 branch 'MTKDEMO-75-Develop'
+                   branch 'MTKDEMO-76-Develop'
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
              }
              post {
                  always {
-                     jiraSendDeploymentInfo environmentId: 'us-stg-3', environmentName: 'us-stg-3', environmentType: 'staging'
+                     jiraSendDeploymentInfo environmentId: 'us-stg-8', environmentName: 'us-stg-8', environmentType: 'staging'
                  }
              }
          }
          stage('Deploy - Production') {
             when {
-                branch 'MTKDEMO-75-Develop'
+                branch 'MTKDEMO-76-Develop'
             }
             steps {
                 echo 'Deploying to Production from Develop...'
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-4', environmentName: 'us-prod-4', environmentType: 'production'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-9', environmentName: 'us-prod-9', environmentType: 'production'
                 }
             }
          }
