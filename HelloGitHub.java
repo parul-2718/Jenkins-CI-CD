@@ -3,9 +3,17 @@ public class HelloGitHub {
         System.out.println("Hello GitHub");
         System.out.println("Jenkins CI CD");
         System.our.println("New branch created");
-        if (20 > 18) {
-            System.out.println("20 is greater than 18"); 
-        }  
+        int day = 4;
+        switch (day) {
+            case 6:
+                System.out.println("Today is Saturday");
+                break;
+            case 7:
+                System.out.println("Today is Sunday");
+                break;
+            default:
+                System.out.println("Looking forward to the Weekend");
+        }    
     }
     
 }
