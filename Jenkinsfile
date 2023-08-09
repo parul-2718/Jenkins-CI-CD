@@ -14,7 +14,7 @@ pipeline {
          }
          stage('Deploy - Staging') {
              when {
-                   branch 'MTKDEMO-82-Develop'
+                   branch 'MTKDEMO-106-Develop'
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
@@ -27,14 +27,14 @@ pipeline {
          }
          stage('Deploy - Production') {
             when {
-                branch 'MTKDEMO-82-Develop'
+                branch 'MTKDEMO-106-Develop'
             }
             steps {
                 echo 'Deploying to Production from Develop...'
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-20', environmentName: 'us-prod-20', environmentType: 'production'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-2', environmentName: 'us-prod-2', environmentType: 'production'
                 }
             }
          }
