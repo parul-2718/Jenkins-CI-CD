@@ -8,13 +8,13 @@ pipeline {
              }
              post {
                  always {
-                     jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
+                     jiraSendBuildInfo site: 'toolkittesting.atlassian.net'
                  }
              }
          }
          stage('Deploy - Staging') {
              when {
-                   branch 'MTKDEMO-106-Develop'
+                   branch 'MT-9-Develop'
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
@@ -27,7 +27,7 @@ pipeline {
          }
          stage('Deploy - Production') {
             when {
-                branch 'MTKDEMO-106-Develop'
+                branch 'MT-9-Develop'
             }
             steps {
                 echo 'Deploying to Production from Develop...'
