@@ -14,7 +14,7 @@ pipeline {
          }
          stage('Deploy - Staging') {
              when {
-                   branch 'MT-9-Develop'
+                   branch 'MT-11'
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
@@ -27,7 +27,7 @@ pipeline {
          }
          stage('Deploy - Production') {
             when {
-                branch 'MT-9-Develop'
+                branch 'MT-11'
             }
             steps {
                 echo 'Deploying to Production from Develop...'
