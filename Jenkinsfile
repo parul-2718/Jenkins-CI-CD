@@ -24,9 +24,9 @@ pipeline {
              }
          }
          stage('Deploy - Production') {
-            // when {
-            //     branch 'SCP-77-Develop'
-            // }
+            when {
+                branch 'SCP-77-Develop'
+            }
             steps {
                 echo 'Deploying to Production from Develop...'
             }
