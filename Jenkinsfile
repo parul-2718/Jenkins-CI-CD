@@ -8,33 +8,39 @@ pipeline {
              }
              post {
                  always {
-                     jiraSendBuildInfo site: 'toolkittesting.atlassian.net'
+
+                     jiraSendBuildInfo site: 'modernengineeringdemojiraenviornment.atlassian.net'
+
                  }
              }
          }
          stage('Deploy - Staging') {
              when {
-                   branch 'MT-10-Develop'
+
+                   branch 'SCP-10-Develop'
+
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
              }
              post {
                  always {
-                     jiraSendDeploymentInfo environmentId: 'us-stg-20', environmentName: 'us-stg-20', environmentType: 'staging'
+                     jiraSendDeploymentInfo environmentId: 'us-stg-5', environmentName: 'us-stg-5', environmentType: 'staging'
                  }
              }
          }
          stage('Deploy - Production') {
             when {
-                branch 'MT-10-Develop'
+
+                branch 'SCP-10-Develop'
+
             }
             steps {
                 echo 'Deploying to Production from Develop...'
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-2', environmentName: 'us-prod-2', environmentType: 'production'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-3', environmentName: 'us-prod-3', environmentType: 'deployment'
                 }
             }
          }
