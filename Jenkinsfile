@@ -16,20 +16,20 @@ pipeline {
                  }
              }
          }
-         // stage('Deploy - Staging') {
-         //     when {
+         stage('Deploy - Staging') {
+             when {
 
-         //           branch 'SCP-12-Develop'
-         //     }
-         //     steps {
-         //         echo 'Deploying to Staging from Develop...'
-         //     }
-         //     post {
-         //         always {
-         //             jiraSendDeploymentInfo environmentId: 'us-stg-1', environmentName: 'us-stg-1', environmentType: 'staging'
-         //         }
-         //     }
-         // }
+                   branch 'SCP-10-Develop'
+             }
+             steps {
+                 echo 'Deploying to Staging from Develop...'
+             }
+             post {
+                 always {
+                     jiraSendDeploymentInfo environmentId: 'us-stg-1', environmentName: 'us-stg-1', environmentType: 'staging'
+                 }
+             }
+         }
          stage('Deploy - Production') {
             when {
                 branch 'SCP-12-Develop'
