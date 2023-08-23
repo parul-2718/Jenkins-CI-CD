@@ -17,7 +17,7 @@ pipeline {
          stage('Deploy - Staging') {
              when {
 
-                   branch 'SCP-10-Develop'
+                   branch 'SCP-12-Develop'
 
              }
              steps {
@@ -25,14 +25,14 @@ pipeline {
              }
              post {
                  always {
-                     jiraSendDeploymentInfo environmentId: 'us-stg-5', environmentName: 'us-stg-5', environmentType: 'staging'
+                     jiraSendDeploymentInfo environmentId: 'us-stg-7', environmentName: 'us-stg-7', environmentType: 'staging'
                  }
              }
          }
          stage('Deploy - Production') {
             when {
 
-                branch 'SCP-10-Develop'
+                branch 'SCP-12-Develop'
 
             }
             steps {
@@ -40,7 +40,7 @@ pipeline {
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-6', environmentName: 'us-prod-6', environmentType: 'deployment'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-8', environmentName: 'us-prod-8', environmentType: 'deployment'
                 }
             }
          }
