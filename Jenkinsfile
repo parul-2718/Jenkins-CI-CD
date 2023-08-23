@@ -8,12 +8,14 @@ pipeline {
              }
              post {
                  always {
-                     jiraSendBuildInfo site: 'modernengineeringdemojiraenviornment.atlassian.net', branch: 'SCP-78-Develop'
+                     jiraSendBuildInfo site: 'modernengineeringdemojiraenviornment.atlassian.net', branch: 'SCP-79-Develop'
                  }
              }
          }
          stage('Deploy - Staging') {
-           
+            when {
+                branch 'SCP-79-Develop'
+            }
              steps {
                  echo 'Deploying to Staging from Develop...'
              }
@@ -25,7 +27,7 @@ pipeline {
          }
          stage('Deploy - Production') {
             when {
-                branch 'SCP-78-Develop'
+                branch 'SCP-79-Develop'
             }
             steps {
                 echo 'Deploying to Production from Develop...'
