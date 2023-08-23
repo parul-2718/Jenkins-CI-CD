@@ -19,14 +19,14 @@ pipeline {
          stage('Deploy - Staging') {
              when {
 
-                   branch 'SCP-10-Develop'
+                   branch 'SCP-12-Develop'
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
              }
              post {
                  always {
-                     jiraSendDeploymentInfo environmentId: 'us-stg-1', environmentName: 'us-stg-1', environmentType: 'staging'
+                     jiraSendDeploymentInfo environmentId: 'us-stg-12', environmentName: 'us-stg-12', environmentType: 'staging'
                  }
              }
          }
@@ -39,7 +39,7 @@ pipeline {
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-8', environmentName: 'us-prod-8', environmentType: 'deployment'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-18', environmentName: 'us-prod-18', environmentType: 'deployment'
                 }
             }
          }
