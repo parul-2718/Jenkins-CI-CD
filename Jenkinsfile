@@ -8,7 +8,7 @@ pipeline {
              }
              post {
                  always {
-                     jiraSendBuildInfo site: 'modernengineeringdemojiraenviornment.atlassian.net', branch: 'SCP-77-Develop'
+                     jiraSendBuildInfo site: 'modernengineeringdemojiraenviornment.atlassian.net', branch: 'SCP-78-Develop'
                  }
              }
          }
@@ -19,7 +19,7 @@ pipeline {
              }
              post {
                  always {
-                     jiraSendDeploymentInfo environmentId: 'us-stg-20', environmentName: 'us-stg-20', environmentType: 'staging'
+                     jiraSendDeploymentInfo environmentId: 'us-stg-22', environmentName: 'us-stg-22', environmentType: 'staging'
                  }
              }
          }
@@ -32,7 +32,7 @@ pipeline {
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-21', environmentName: 'us-prod-21', environmentType: 'production'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-23', environmentName: 'us-prod-23', environmentType: 'production'
                 }
             }
          }
