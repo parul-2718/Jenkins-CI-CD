@@ -19,7 +19,7 @@ pipeline {
          stage('Deploy - Staging') {
              when {
 
-                   branch 'SCP-1-Develop'
+                   branch 'SCP-12-Develop'
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
