@@ -13,28 +13,28 @@ pipeline {
              }
          }
          stage('Deploy - Staging') {
-            when {
-                branch 'SCP-79-Develop'
-            }
+            // when {
+            //     branch 'SCP-79-Develop'
+            // }
              steps {
                  echo 'Deploying to Staging from Develop...'
              }
              post {
                  always {
-                     jiraSendDeploymentInfo environmentId: 'us-stg-22', environmentName: 'us-stg-22', environmentType: 'staging'
+                     jiraSendDeploymentInfo environmentId: 'us-stg-24', environmentName: 'us-stg-24', environmentType: 'staging'
                  }
              }
          }
          stage('Deploy - Production') {
-            when {
-                branch 'SCP-79-Develop'
-            }
+            // when {
+            //     branch 'SCP-79-Develop'
+            // }
             steps {
                 echo 'Deploying to Production from Develop...'
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-23', environmentName: 'us-prod-23', environmentType: 'production'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-25', environmentName: 'us-prod-25', environmentType: 'production'
                 }
             }
          }
