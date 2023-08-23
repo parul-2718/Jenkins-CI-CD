@@ -17,7 +17,7 @@ pipeline {
          stage('Deploy - Staging') {
              when {
 
-                   branch 'SCP-10-Develop'
+                   branch 'SCP-1-Develop'
 
              }
              steps {
