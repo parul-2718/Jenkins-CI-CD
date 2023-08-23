@@ -8,13 +8,13 @@ pipeline {
              }
              post {
                  always {
-                     jiraSendBuildInfo site: 'smartconnectedproductsmodernengineering.atlassian.net'
+                     jiraSendBuildInfo site: 'modernengineeringdemojiraenviornment.atlassian.net'
                  }
              }
          }
          stage('Deploy - Staging') {
              when {
-                   branch 'MTKDEMO-106-Develop'
+                   branch 'SCP-77-Develop'
              }
              steps {
                  echo 'Deploying to Staging from Develop...'
@@ -27,14 +27,14 @@ pipeline {
          }
          stage('Deploy - Production') {
             when {
-                branch 'MTKDEMO-106-Develop'
+                branch 'SCP-77-Develop'
             }
             steps {
                 echo 'Deploying to Production from Develop...'
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-2', environmentName: 'us-prod-2', environmentType: 'production'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-21', environmentName: 'us-prod-21', environmentType: 'production'
                 }
             }
          }
